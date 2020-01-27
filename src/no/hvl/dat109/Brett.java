@@ -1,19 +1,15 @@
 package no.hvl.dat109;
 
+import java.util.ArrayList;
+
 public class Brett {
+
+	private ArrayList<Rute> ruter;
 	
-	private Integer[] ruter;
-	
-	public Brett(Integer[] ruter) {
-		ruter = new Integer[100];
+	public Brett(ArrayList<Rute> ruter) {
+		ruter = new ArrayList<Rute>();
 	}
 
-	public Integer[] getRuter() {
-		return ruter;
-	}
-
-	public void setRuter(Integer[] ruter) {
-		this.ruter = ruter;
-	}
+	
 
 }
