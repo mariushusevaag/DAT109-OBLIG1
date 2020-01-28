@@ -26,7 +26,7 @@ public class Brikke {
 		this.farge = farge;
 	}
 
-
+	
 	public int getPos() {
 		return pos;
 	}
@@ -40,6 +40,10 @@ public class Brikke {
 	public Brikke(int antallBrikker) {
 		this.nr = antallBrikker + 1;
 		this.pos = 0;
+	}
+	
+	public void flytt(int verdi) {
+		pos += verdi;
 	}
 
 }
