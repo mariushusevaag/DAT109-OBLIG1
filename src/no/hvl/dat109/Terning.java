@@ -1,5 +1,11 @@
 package no.hvl.dat109;
 
+/**
+ * Definerer en terning.
+ * 
+ * @author Marius Husevåg, Glenn Arnold Barosen, Charlie Coulter
+ *
+ */
 public class Terning {
 	private final int MAX = 6;
 	private int verdi;
@@ -12,6 +18,11 @@ public class Terning {
 		this.verdi = verdi;
 	}
 	
+	/**
+	 * Metode for å trille en terning.
+	 * 
+	 * @return verdi
+	 */
 	public int trill() {
 		verdi = (int)(Math.random() * MAX) + 1;
 		return verdi;
