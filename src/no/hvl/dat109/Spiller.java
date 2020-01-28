@@ -16,6 +16,8 @@ public class Spiller {
 	
 	public Spiller() {
 		this.navn = "Per";
+		this.sekserePaaRad = 0;
+		this.trengerSekser = false;
 	}
 	
 	public Spiller(String navn) {
@@ -77,7 +79,7 @@ public class Spiller {
 			 */
 			if(sekserePaaRad == 3) {
 				//Flytt til første rute + neste kast må være en sekser
-				brikke.setRute(0);
+				brikke.setPos(0);
 				sekserePaaRad = 0;
 				trengerSekser = true;
 				return;
