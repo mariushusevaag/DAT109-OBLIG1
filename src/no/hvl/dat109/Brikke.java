@@ -1,5 +1,12 @@
 package no.hvl.dat109;
 
+/**
+ * Definerer en brikke
+ * 
+ * @author Charlie Coulter, Marius Husevåg, Glenn Arnold Barosen 
+ *
+ */
+
 public class Brikke {
 	
 	private int nr;
@@ -42,6 +49,11 @@ public class Brikke {
 		this.pos = 0;
 	}
 	
+	/**
+	 * Metode for å flytte en brikke
+	 * 
+	 * @param verdi
+	 */
 	public void flytt(int verdi) {
 		pos += verdi;
 	}
