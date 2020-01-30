@@ -9,23 +9,10 @@ package no.hvl.dat109;
 public class Spiller {
 	private String navn;
 	private Brikke brikke;
-	private Brett spillebrett;
 	private Terning t1;
 	private int sekserePaaRad;
 	private boolean trengerSekser;
-	
-	public Spiller() {
-		this.navn = "Per";
-		this.sekserePaaRad = 0;
-		this.trengerSekser = false;
-	}
-	
-	public Spiller(String navn) {
-		this.navn = navn;
-		this.sekserePaaRad = 0;
-		this.trengerSekser = false;
-	}
-	
+
 	public Spiller(String navn, Brikke brikke) {
 		this.navn = navn;
 		this.brikke = brikke;
