@@ -1,52 +1,47 @@
 package no.hvl.dat109;
 
+/**
+ * 
+ * @author Glenn Barosen, Marius Husevåg, Charlie Coulter
+ *
+ */
 public class Rute {
 
-	private int indeks;
-	private Stige stige;
-	private Slange slange;
-
-	public Rute(int indeks) {
-		this.indeks = indeks;
+	private int ruteNr;
+	private int nyRuteNr;
+	
+	public Rute(int ruteNr) {
+		this.ruteNr = ruteNr;
+		this.nyRuteNr= ruteNr;
+	}
+	
+	public Rute(int ruteNr, int nyRuteNr) {
+		this.nyRuteNr=ruteNr;
+		this.nyRuteNr=nyRuteNr;
 	}
 
-	public Rute(int indeks, Slange slange) {
-		this.indeks = indeks;
-		this.slange = slange;
+	public int getRuteNr() {
+		return ruteNr;
 	}
 
-	public Rute(int indeks, Stige stige) {
-		this.indeks = indeks;
-		this.stige = stige;
+	public int getNyRuteNr() {
+		return nyRuteNr;
 	}
-
-	public int getIndeks() {
-		return indeks;
+	
+	/**
+	 * 
+	 * @return Returnerer true om ruten er begynnelsen på en stige
+	 */
+	public boolean harStige() {
+		return getNyRuteNr() > getRuteNr();
 	}
-
-	public void setIndeks(int indeks) {
-		this.indeks = indeks;
-	}
-
-	public Stige getStige() {
-		return stige;
-	}
-
-	public void setStige(Stige stige) {
-		this.stige = stige;
-	}
-
-	public Slange getSlange() {
-		return slange;
-	}
-
-	public void setSlange(Slange slange) {
-		this.slange = slange;
-	}
-
-	@Override
-	public String toString() {
-		return "Rute [indeks=" + indeks + ", stige=" + stige + ", slange=" + slange + "]";
+	
+	/**
+	 * 
+	 * @return Returnerer true om ruten er et slangehode
+	 */
+	public boolean harSlange() {
+		return getNyRuteNr() < getRuteNr();
 	}
 
 }
