@@ -16,8 +16,8 @@ public class Brett {
 		this.ruter=new ArrayList<Rute>();
 	}
 	
-	public Brett lagBrett(int antallRuter) {
-		for (int i=0;i<antallRuter;i++) {
+	public Brett lagBrett() {
+		for (int i=1;i<=Stigespill.STANDARD_RUTER;i++) {
 			ruter.add(new Rute(i));
 		}
 	
