@@ -14,6 +14,7 @@ public class Stigespill {
 			ruter.add(new Rute(i, 0));
 			
 		}
+		ruter.add(, element);
 //		ruter.remove(60);
 //		ruter.add(60, new Rute(60, -1));
 //		

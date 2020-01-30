@@ -3,15 +3,17 @@ package no.hvl.dat109;
 public class Rute {
 
 	private int indeks;
-	private int rutetype;
+	private int type;
+	private Brett brett;
 
-	public Rute(int indeks) {
+	public Rute(int indeks, int type) {
 		this(indeks, 0);
 	}
 
-	public Rute(int indeks, int rutetype) {
+	public Rute(int indeks, int rutetype, Brett brett) {
 		this.indeks = indeks;
-		this.rutetype = rutetype;
+		this.type = type;
+		this.brett = brett;
 	}
 
 	public int getPlass() {
@@ -19,7 +21,15 @@ public class Rute {
 	}
 
 	public int getType() {
-		return rutetype;
+		return type;
+	}
+	
+	public Brett getBrett() {
+		return brett;
+	}
+
+	public void setBrett(Brett brett) {
+		this.brett = brett;
 	}
 
 	public boolean erSlange() {
@@ -29,7 +39,7 @@ public class Rute {
 	public boolean erStige() {
 		return rutetype > 0;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Rute " + getPlass() + ". Type: " + rutetype + ".\n";
