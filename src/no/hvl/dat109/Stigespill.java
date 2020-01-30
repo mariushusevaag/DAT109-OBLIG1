@@ -25,7 +25,7 @@ public class Stigespill {
 	
 	public Stigespill() {
 		this.terning = new Terning();
-		this.brett = new Brett();
+		this.brett = new Brett(null);
 		this.vinner = null;
 	}
 
@@ -34,32 +34,12 @@ public class Stigespill {
 		this.spillere = spillere;
 	}
 	
-	public void startSpill() {
-		Stigespill spill = new Stigespill();
 		
-	}
-
-	public void spill() {
-		ArrayList<Rute> ruter = new ArrayList<Rute>();
-		Brett brett = new Brett(ruter);
-		
-		for (int i=0;i<=100;i++) {
-			ruter.add(new Rute(i, 0));
-			
-		}
-		ruter.add(, element);
-//		ruter.remove(60);
-//		ruter.add(60, new Rute(60, -1));
-//		
-//		
-//		for (int i = 0; i < ruter.size(); i++) {
-//			System.out.println(ruter.get(i));
-//		}
-//		
-//		System.out.println(ruter.get(60).erSlange());
-//		System.out.println(brett.toString());
 	
 
+	public void spill() {	
+		System.out.println(brett.lagBrett(100));
+		
 	}
 
 }
