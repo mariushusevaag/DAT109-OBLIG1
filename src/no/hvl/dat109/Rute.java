@@ -3,46 +3,50 @@ package no.hvl.dat109;
 public class Rute {
 
 	private int indeks;
-	private int type;
-	private Brett brett;
+	private Stige stige;
+	private Slange slange;
 
-	public Rute(int indeks, int type) {
-		this(indeks, 0);
-	}
-
-	public Rute(int indeks, int rutetype, Brett brett) {
+	public Rute(int indeks) {
 		this.indeks = indeks;
-		this.type = type;
-		this.brett = brett;
 	}
 
-	public int getPlass() {
-		return indeks + 1;
+	public Rute(int indeks, Slange slange) {
+		this.indeks = indeks;
+		this.slange = slange;
 	}
 
-	public int getType() {
-		return type;
-	}
-	
-	public Brett getBrett() {
-		return brett;
+	public Rute(int indeks, Stige stige) {
+		this.indeks = indeks;
+		this.stige = stige;
 	}
 
-	public void setBrett(Brett brett) {
-		this.brett = brett;
+	public int getIndeks() {
+		return indeks;
 	}
 
-	public boolean erSlange() {
-		return rutetype < 0;
+	public void setIndeks(int indeks) {
+		this.indeks = indeks;
 	}
 
-	public boolean erStige() {
-		return rutetype > 0;
+	public Stige getStige() {
+		return stige;
 	}
-	
+
+	public void setStige(Stige stige) {
+		this.stige = stige;
+	}
+
+	public Slange getSlange() {
+		return slange;
+	}
+
+	public void setSlange(Slange slange) {
+		this.slange = slange;
+	}
+
 	@Override
 	public String toString() {
-		return "Rute " + getPlass() + ". Type: " + rutetype + ".\n";
+		return "Rute [indeks=" + indeks + ", stige=" + stige + ", slange=" + slange + "]";
 	}
 
 }
