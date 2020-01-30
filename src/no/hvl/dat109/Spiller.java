@@ -12,12 +12,15 @@ public class Spiller {
 	private Terning t1;
 	private int sekserePaaRad;
 	private boolean trengerSekser;
+	private boolean nyttKast;
 
 	public Spiller(String navn, Brikke brikke) {
 		this.navn = navn;
 		this.brikke = brikke;
 		this.sekserePaaRad = 0;
 		this.trengerSekser = false;
+		this.nyttKast = false;
+		this.t1 = new Terning();
 	}
 	
 	public String getNavn() {
@@ -36,20 +39,53 @@ public class Spiller {
 		this.brikke = brikke;
 	}
 	
+	public Terning getTerning() {
+		return t1;
+	}
+	
+	public void setTerning(Terning t1) {
+		this.t1 = t1;
+	}
+	
+	public int getSekserePaaRad() {
+		return sekserePaaRad;
+	}
+	
+	public void setSekserePaaRad(int sekserePaaRad) {
+		this.sekserePaaRad = sekserePaaRad;
+	}
+	
+	public boolean getTrengerSekser() {
+		return trengerSekser;
+	}
+	
+	public void setTrengerSekser(boolean trengerSekser) {
+		this.trengerSekser = trengerSekser;
+	}
+	
+	public boolean getNyttKast() {
+		return nyttKast;
+	}
+	
+	public void setNyttKast(boolean nyttKast) {
+		this.nyttKast = nyttKast;
+	}
+	
 	/**
 	 * Spiller ett trekk for spilleren.
 	 */
 	public void spillTrekk() {
+		setNyttKast(false);
 		t1.trill();
 		int nyPos = brikke.getPos() + t1.getVerdi();
 		
 		/**
 		 * Sjekker om spilleren trenger en sekser for å gå videre.
 		 */
-		if(trengerSekser) {
-			if(t1.getVerdi() == 6 && nyPos < 99) {
+		if(getTrengerSekser()) {
+			if(t1.getVerdi() == 6) {
 				brikke.flytt(t1.getVerdi());
-				trengerSekser = false;
+				setTrengerSekser(false);
 				return;
 			} else {
 				return;
@@ -59,29 +95,30 @@ public class Spiller {
 		/**
 		 * Sjekker om spilleren får en sekser.
 		 */
-		if(t1.getVerdi() == 6 && !trengerSekser) {
-			sekserePaaRad++;
-			
+		if(t1.getVerdi() == 6 && !getTrengerSekser()) {
+			setSekserePaaRad(getSekserePaaRad() + 1);
 			/**
 			 * Om det er den tredje sekseren på rad flyttes brikken til start.
 			 */
-			if(sekserePaaRad == 3) {
+			if(getSekserePaaRad() == 3) {
 				//Flytt til første rute + neste kast må være en sekser
 				brikke.setPos(0);
-				sekserePaaRad = 0;
-				trengerSekser = true;
+				setSekserePaaRad(0);
+				setTrengerSekser(true);
 				return;
 			} else {
 				//Flytt + nytt kast
 				if(nyPos < 99) {
 					brikke.flytt(t1.getVerdi());
-					spillTrekk();
+					setNyttKast(true);
+					//spillTrekk();
 					return;
 				} else {
 					return;
 				}
 			}
 		}
+		setSekserePaaRad(0);
 		
 		if(nyPos > 99) {
 			return;

@@ -23,8 +23,15 @@ public class Stigespill {
 	 */
 	
 	public Stigespill() {
-		this.brett = new Brett(null);
+	//	this.brett = new Brett(null);
+		spillere = new Spiller[2];
 		
+		for (int i = 0; i < spillere.length; i++) {
+			Brikke b = new Brikke(i, "Farge" + i);
+			Spiller s = new Spiller("Spiller" + i, b);
+			
+			spillere[i] = s;
+		}
 		this.vinner = null;
 	}
 
@@ -33,9 +40,31 @@ public class Stigespill {
 	}
 	
 	public void spill() {	
-		System.out.println(brett.lagBrett(100));
-		brett.lagBrett(100);
-		System.out.println(brett.toString());
+		while (vinner == null) {
+			for (int i = 0; i < spillere.length && vinner == null; i++) {
+				Spiller s = spillere[i];
+				Brikke b = s.getBrikke();
+				Terning t = s.getTerning();
+				
+				s.spillTrekk();
+				
+				if(b.getPos() == 99) {
+					System.out.println("Spiller: " + s.getNavn());
+					System.out.println("Kastet: " + t.getVerdi());
+					System.out.println("Pos: " + b.getPos());
+					System.out.println("Vinneren er: " + s.getNavn());
+					vinner = s;
+				} else {
+					System.out.println("Spiller: " + s.getNavn());
+					System.out.println("Kastet: " + t.getVerdi());
+					System.out.println("Pos: " + b.getPos());
+				}
+				
+				if(s.getNyttKast()) {
+					i--;
+				}
+			}
+		}
 	}
 
 }
