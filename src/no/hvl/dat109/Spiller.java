@@ -41,12 +41,13 @@ public class Spiller {
 	 */
 	public void spillTrekk() {
 		t1.trill();
+		int nyPos = brikke.getPos() + t1.getVerdi();
 		
 		/**
 		 * Sjekker om spilleren trenger en sekser for å gå videre.
 		 */
 		if(trengerSekser) {
-			if(t1.getVerdi() == 6) {
+			if(t1.getVerdi() == 6 && nyPos < 99) {
 				brikke.flytt(t1.getVerdi());
 				trengerSekser = false;
 				return;
@@ -72,10 +73,18 @@ public class Spiller {
 				return;
 			} else {
 				//Flytt + nytt kast
-				brikke.flytt(t1.getVerdi());
-				spillTrekk();
-				return;
+				if(nyPos < 99) {
+					brikke.flytt(t1.getVerdi());
+					spillTrekk();
+					return;
+				} else {
+					return;
+				}
 			}
+		}
+		
+		if(nyPos > 99) {
+			return;
 		}
 		
 		brikke.flytt(t1.getVerdi());
