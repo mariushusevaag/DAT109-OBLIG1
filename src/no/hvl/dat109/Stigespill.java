@@ -14,7 +14,7 @@ import no.hvl.dat109.Brett;
 public class Stigespill {
 	
 	
-<<<<<<< HEAD
+
 	private Brett brett;
 	private Spiller[] spillere;
 	private Spiller vinner;
@@ -24,12 +24,12 @@ public class Stigespill {
 	 */
 	
 	public Stigespill() {
-	//	this.brett = new Brett(null);
+		brett = new Brett();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Hvor mange skal spille?");
 		int antSpillere = input.nextInt();
 		spillere = new Spiller[antSpillere];
-		input.close();
+		
 		
 		for (int i = 0; i < spillere.length; i++) {
 			
@@ -48,15 +48,27 @@ public class Stigespill {
 		this.vinner = null;
 		
 	}
+	public void leggTilSpillere() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Hvor mange skal spille?");
+		int antSpillere = sc.nextInt();
+		spillere = new Spiller[antSpillere];
+		
+		for (Spiller s : spillere) {
+			System.out.println("Skriv inn navn: ");
+			String navn = sc.nextLine();
+		}
+	}
 
 	public void setup(Spiller[] spillere) {
 		this.spillere = spillere;
-=======
-	public void spill() {
+	}
+
+	public void startSpill() {
 		Brett b = new Brett();
 		b.leggTilRutetype();
 		System.out.println(b.toString());
->>>>>>> e1b9ae8d0bf45ddb528f2f66cd789e09695d71cf
+
 	}
 	
 	

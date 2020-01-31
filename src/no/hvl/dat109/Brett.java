@@ -12,21 +12,6 @@ public class Brett {
 		for (int i = 1; i <=STANDARD_RUTER; i++) {
 			brett.put(i, new Rute(i));
 		}
-<<<<<<< HEAD
-	
-		Brett b = new Brett(ruter);
-		
-		return b;
-	}
-
-	public List<Slange> getSlanger() {
-		return slanger;
-	}
-
-	public void setSlanger(List<Slange> slanger) {
-		this.slanger = slanger;
-=======
->>>>>>> e1b9ae8d0bf45ddb528f2f66cd789e09695d71cf
 	}
 
 	public Map<Integer, Rute> getBrett() {
