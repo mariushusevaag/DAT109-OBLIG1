@@ -1,4 +1,4 @@
-package no.hvl.dat109;
+package no.hvl.dat109.objekter;
 
 import java.util.HashMap;
 import java.util.Map;

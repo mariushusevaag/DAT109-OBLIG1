@@ -1,13 +1,13 @@
-package no.hvl.dat109;
+package no.hvl.dat109.objekter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import static java.lang.Thread.sleep;
+import no.hvl.dat109.objekter.Brett;
 
-import no.hvl.dat109.Brett;
+import static java.lang.Thread.sleep;
 
 /**
  * 
@@ -69,7 +69,7 @@ public class Stigespill {
 	public void spillRunde() {
 		for (Spiller spiller : spillere) {
             spiller.spillTrekk(t1);
-            if(spiller.getBrikke().getRute().getNummer() == 100){
+            if(spiller.getBrikke().getRute().getRuteNr() == 100){
                 vunnet=true;
             }
         }
@@ -77,7 +77,7 @@ public class Stigespill {
 	
 	public String finnVinner() {
 		return spillere.stream()
-                .filter(s -> s.getBrikke().getRute().getNummer() == 100)
+                .filter(s -> s.getBrikke().getRute().getRuteNr() == 100)
                 .map(s -> s.getNavn())
                 .collect(Collectors.joining());
 	}
