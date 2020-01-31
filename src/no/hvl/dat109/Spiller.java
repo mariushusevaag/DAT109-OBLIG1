@@ -126,6 +126,11 @@ public class Spiller {
 		}
 		
 		brikke.flytt(t1.getVerdi());
+		
+		if(brikke.getRute().harSlange() || brikke.getRute().harStige()) {
+			brikke.flytt(brikke.getRute().getNyRuteNr());
+			System.out.println("Hahaha");
+		}
 	}
 
 	@Override
