@@ -44,4 +44,11 @@ public class Rute {
 		return getNyRuteNr() < getRuteNr();
 	}
 
+	@Override
+	public String toString() {
+		return "Rute [ruteNr=" + ruteNr + ", nyRuteNr=" + nyRuteNr + "]";
+	}
+	
+	
+
 }
