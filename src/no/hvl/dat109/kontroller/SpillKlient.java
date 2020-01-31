@@ -1,9 +1,15 @@
 package no.hvl.dat109.kontroller;
 
+import no.hvl.dat109.objekter.Stigespill;
+
 public class SpillKlient {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Stigespill spill = new Stigespill();
+        LagSpillere spillere = new LagSpillere(spill);
+
+        spillere.spillerSetup();
+        spill.startSpill();
 
 	}
 
