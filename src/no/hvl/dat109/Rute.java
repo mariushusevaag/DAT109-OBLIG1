@@ -16,7 +16,7 @@ public class Rute {
 	}
 	
 	public Rute(int ruteNr, int nyRuteNr) {
-		this.nyRuteNr=ruteNr;
+		this.ruteNr=ruteNr;
 		this.nyRuteNr=nyRuteNr;
 	}
 
@@ -46,7 +46,7 @@ public class Rute {
 
 	@Override
 	public String toString() {
-		return "Rute [ruteNr=" + ruteNr + ", nyRuteNr=" + nyRuteNr + "]";
+		return "Rute [ruteNr=" + getRuteNr() + ", nyRuteNr=" + getNyRuteNr() + "]";
 	}
 	
 	

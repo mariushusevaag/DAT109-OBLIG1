@@ -125,11 +125,13 @@ public class Spiller {
 			return;
 		}
 		
-		brikke.flytt(t1.getVerdi());
+		
 		
 		if(brikke.getRute().harSlange() || brikke.getRute().harStige()) {
 			brikke.flytt(brikke.getRute().getNyRuteNr());
 			System.out.println("Hahaha");
+		} else {
+			brikke.flytt(t1.getVerdi());
 		}
 	}
 
