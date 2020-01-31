@@ -6,10 +6,10 @@ import java.util.Map;
 public class Brett {
 	final int STANDARD_RUTER = 100;
 	private Map<Integer, Rute> brett;
-	
+
 	public Brett() {
 		brett = new HashMap<>();
-		for (int i = 1; i <=STANDARD_RUTER; i++) {
+		for (int i = 1; i <= STANDARD_RUTER; i++) {
 			brett.put(i, new Rute(i));
 		}
 	}
@@ -17,9 +17,9 @@ public class Brett {
 	public Map<Integer, Rute> getBrett() {
 		return this.brett;
 	}
-	
+
 	public void leggTilRutetype() {
-		
+
 		// Legger til stiger
 		brett.put(2, new Rute(2, 38));
 		brett.put(4, new Rute(4, 14));
@@ -30,7 +30,7 @@ public class Brett {
 		brett.put(51, new Rute(51, 67));
 		brett.put(71, new Rute(71, 91));
 		brett.put(80, new Rute(80, 100));
-		
+
 		// Legger til slanger
 		brett.put(16, new Rute(16, 6));
 		brett.put(47, new Rute(47, 26));
@@ -45,14 +45,14 @@ public class Brett {
 	}
 
 	public Rute nyRutePos(Rute rute, int verdi) {
-        int nyPos = rute.getRuteNr() + verdi;
-        return brett.get(nyPos);
+		int pos = rute.getRuteNr();
+		int nyPos = pos + verdi;
+		return brett.get(nyPos);
 	}
+
 	@Override
 	public String toString() {
 		return "Brett [brett=" + brett + "]";
 	}
-	
-	
 
 }
