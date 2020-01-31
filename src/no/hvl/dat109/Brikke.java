@@ -42,8 +42,15 @@ public class Brikke {
 	 * @param verdi
 	 */
 	public void flytt(int verdi) {
-		Rute nyRute = brett.nyRutePos(getRute(), verdi);
-        setRute(nyRute);		
+		if (rute.getRuteNr() + verdi <= 100) {
+			Rute nyRute = brett.nyRutePos(getRute(), verdi);
+			setRute(nyRute);
+		}		
 	}
+	
+	public void flyttTilNyPosisjon(int curPos){
+        Rute nyPos= brett.getBrett().get(curPos);
+        setRute(nyPos);
+    }
 	
 }

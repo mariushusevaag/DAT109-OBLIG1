@@ -24,8 +24,8 @@ public class Terning {
 	 * @return verdi
 	 */
 	public int trill() {
-		//verdi = (int)(Math.random() * MAX) + 1;
-		verdi = 1;
+		verdi = (int)(Math.random() * MAX) + 1;
+		
 		return verdi;
 	}
 	

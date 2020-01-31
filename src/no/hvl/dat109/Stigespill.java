@@ -58,9 +58,14 @@ public class Stigespill {
 	}
 
 	public void startSpill() {
+		String farge = "gul";
 		Brett b = new Brett();
+		Brikke brikke = new Brikke(farge, b);
+		brikke.setRute(new Rute(1));
+		brikke.flytt(1);
+		System.out.println(brikke.getRute().getRuteNr());
+		System.out.println(brikke.getRute().harStige());
 		b.leggTilRutetype();
-		System.out.println(b.toString());
 		leggTilSpillere();
 
 		

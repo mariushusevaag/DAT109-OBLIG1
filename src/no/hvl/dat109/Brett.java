@@ -45,8 +45,8 @@ public class Brett {
 	}
 
 	public Rute nyRutePos(Rute rute, int verdi) {
-		int nyPos = rute.getNyRuteNr() + verdi;
-		return brett.get(nyPos);
+        int nyPos = rute.getRuteNr() + verdi;
+        return brett.get(nyPos);
 	}
 	@Override
 	public String toString() {
