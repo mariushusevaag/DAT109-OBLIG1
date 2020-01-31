@@ -25,39 +25,37 @@ public class Stigespill {
 	
 	public Stigespill() {
 		brett = new Brett();
-		Scanner input = new Scanner(System.in);
-		System.out.println("Hvor mange skal spille?");
-		int antSpillere = input.nextInt();
-		spillere = new Spiller[antSpillere];
 		
-		
-		for (int i = 0; i < spillere.length; i++) {
-			
-			System.out.println("Skriv inn navn: ");
-			String name = input.nextLine();
+		leggTilSpillere();
 
-			System.out.println("Skriv inn farge: ");
-			String color = input.nextLine();
-			
-			Brikke b = new Brikke(i, color);
-			Spiller s = new Spiller(name , b);
-			
-			spillere[i] = s;
-			input.close();
-		}
 		this.vinner = null;
 		
 	}
 	public void leggTilSpillere() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Hvor mange skal spille?");
+		
 		int antSpillere = sc.nextInt();
 		spillere = new Spiller[antSpillere];
 		
+		
 		for (Spiller s : spillere) {
+			int i = 0;
+			
 			System.out.println("Skriv inn navn: ");
+			sc.next();
 			String navn = sc.nextLine();
+			
+			System.out.println("Skriv inn farge: ");
+			sc.next();
+			String farge = sc.nextLine();
+			
+			Brikke b = new Brikke(i, farge);
+			s = new Spiller(navn, b);
+			
+			i++;
 		}
+		sc.close();
 	}
 
 	public void setup(Spiller[] spillere) {
