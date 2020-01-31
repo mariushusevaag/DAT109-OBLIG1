@@ -12,7 +12,7 @@ public class Rute {
 	
 	public Rute(int ruteNr) {
 		this.ruteNr = ruteNr;
-		this.nyRuteNr= ruteNr;
+		this.nyRuteNr = ruteNr;
 	}
 	
 	public Rute(int ruteNr, int nyRuteNr) {

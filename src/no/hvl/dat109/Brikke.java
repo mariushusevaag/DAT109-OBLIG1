@@ -9,23 +9,33 @@ package no.hvl.dat109;
 
 public class Brikke {
 	
-	private int nr;
 	private String farge;
-	private int pos;
+	private Rute rute;
+	private Brett brett;
 	 
-	public Brikke(int nr, String farge) {
-		this.nr = nr;
+	public Brikke(String farge, Brett brett) {
 		this.farge = farge;
-		this.pos = 0;
+		this.rute = brett.getBrett().get(1);
+		this.brett = brett;
+		
 	}
 
-	public int getNr() {
-		return nr;
+	
+	
+
+	public Rute getRute() {
+		return rute;
 	}
 
-	public void setNr(int nr) {
-		this.nr = nr;
+
+
+
+	public void setRute(Rute rute) {
+		this.rute = rute;
 	}
+
+
+
 
 	public String getFarge() {
 		return farge;
@@ -34,14 +44,6 @@ public class Brikke {
 	public void setFarge(String farge) {
 		this.farge = farge;
 	}
-	
-	public int getPos() {
-		return pos;
-	}
-
-	public void setPos(int pos) {
-		this.pos = pos;
-	}
 
 	/**
 	 * Metode for å flytte en brikke
@@ -49,7 +51,11 @@ public class Brikke {
 	 * @param verdi
 	 */
 	public void flytt(int verdi) {
-		pos += verdi;
+		Rute nyRute = brett.nyRutePos(getRute(), verdi);
+        setRute(nyRute);		
 	}
+	
+	
+	
 
 }

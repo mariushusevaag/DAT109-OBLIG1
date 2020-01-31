@@ -126,5 +126,13 @@ public class Spiller {
 		
 		brikke.flytt(t1.getVerdi());
 	}
+
+	@Override
+	public String toString() {
+		return "Spiller [navn=" + navn + ", brikke=" + brikke + ", t1=" + t1 + ", sekserePaaRad=" + sekserePaaRad
+				+ ", trengerSekser=" + trengerSekser + ", nyttKast=" + nyttKast + "]";
+	}
+	
+	
 	
 }

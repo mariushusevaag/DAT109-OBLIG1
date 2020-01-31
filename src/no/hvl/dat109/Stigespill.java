@@ -49,7 +49,7 @@ public class Stigespill {
 			
 			String farge = sc.next();
 			
-			Brikke b = new Brikke(i, farge);
+			Brikke b = new Brikke(farge);
 			Spiller s = new Spiller(navn, b);
 			spillere[i] = s;
 			

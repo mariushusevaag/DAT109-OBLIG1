@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Brett {
-	private static final int STANDARD_RUTER = 100;
+	final int STANDARD_RUTER = 100;
 	private Map<Integer, Rute> brett;
 	
 	public Brett() {
@@ -44,6 +44,10 @@ public class Brett {
 		brett.put(98, new Rute(98, 78));
 	}
 
+	public Rute nyRutePos(Rute rute, int verdi) {
+		int nyPos = rute.getNyRuteNr() + verdi;
+		return brett.get(nyPos);
+	}
 	@Override
 	public String toString() {
 		return "Brett [brett=" + brett + "]";
