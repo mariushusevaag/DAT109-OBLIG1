@@ -1,6 +1,7 @@
 package no.hvl.dat109;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import no.hvl.dat109.Brett;
 
@@ -24,15 +25,28 @@ public class Stigespill {
 	
 	public Stigespill() {
 	//	this.brett = new Brett(null);
-		spillere = new Spiller[2];
+		Scanner input = new Scanner(System.in);
+		System.out.println("Hvor mange skal spille?");
+		int antSpillere = input.nextInt();
+		spillere = new Spiller[antSpillere];
+		input.close();
 		
 		for (int i = 0; i < spillere.length; i++) {
-			Brikke b = new Brikke(i, "Farge" + i);
-			Spiller s = new Spiller("Spiller" + i, b);
+			
+			System.out.println("Skriv inn navn: ");
+			String name = input.nextLine();
+
+			System.out.println("Skriv inn farge: ");
+			String color = input.nextLine();
+			
+			Brikke b = new Brikke(i, color);
+			Spiller s = new Spiller(name , b);
 			
 			spillere[i] = s;
+			input.close();
 		}
 		this.vinner = null;
+		
 	}
 
 	public void setup(Spiller[] spillere) {

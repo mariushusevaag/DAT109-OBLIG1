@@ -23,8 +23,6 @@ public class Brett {
 	
 		Brett b = new Brett(ruter);
 		
-		
-		
 		return b;
 	}
 

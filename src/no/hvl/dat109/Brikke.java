@@ -12,7 +12,7 @@ public class Brikke {
 	private int nr;
 	private String farge;
 	private int pos;
-	
+	 
 	public Brikke(int nr, String farge) {
 		this.nr = nr;
 		this.farge = farge;
