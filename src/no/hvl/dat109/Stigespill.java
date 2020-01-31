@@ -49,7 +49,7 @@ public class Stigespill {
 			
 			String farge = sc.next();
 			
-			Brikke b = new Brikke(farge);
+			Brikke b = new Brikke(farge, brett);
 			Spiller s = new Spiller(navn, b);
 			spillere[i] = s;
 			
@@ -73,16 +73,16 @@ public class Stigespill {
 				
 				s.spillTrekk();
 				
-				if(b1.getPos() == 99) {
+				if(b1.getRute().getRuteNr() == brett.STANDARD_RUTER) {
 					System.out.println("Spiller: " + s.getNavn());
 					System.out.println("Kastet: " + t.getVerdi());
-					System.out.println("Pos: " + b1.getPos());
+					System.out.println("Pos: " + b1.getRute().getRuteNr());
 					System.out.println("Vinneren er: " + s.getNavn());
 					vinner = s;
 				} else {
 					System.out.println("Spiller: " + s.getNavn());
 					System.out.println("Kastet: " + t.getVerdi());
-					System.out.println("Pos: " + b1.getPos());
+					System.out.println("Pos: " + b1.getRute().getRuteNr());
 				}
 				
 				if(s.getNyttKast()) {
@@ -91,61 +91,4 @@ public class Stigespill {
 			}
 		}
 	}
-	
-	
-//	private static final int WINPOINT = 100;
-//	
-//	private Brett brett;
-//	private Spiller[] spillere;
-//	private Spiller vinner;
-//	
-//	/**
-//	 * Oppretter et nytt stigespill objekt
-//	 */
-//	
-//	public Stigespill() {
-//	//	this.brett = new Brett(null);
-//		spillere = new Spiller[2];
-//		
-//		for (int i = 0; i < spillere.length; i++) {
-//			Brikke b = new Brikke(i, "Farge" + i);
-//			Spiller s = new Spiller("Spiller" + i, b);
-//			
-//			spillere[i] = s;
-//		}
-//		this.vinner = null;
-//	}
-//
-//	public void setup(Spiller[] spillere) {
-//		this.spillere = spillere;
-//	}
-//	
-//	public void spill() {	
-//		while (vinner == null) {
-//			for (int i = 0; i < spillere.length && vinner == null; i++) {
-//				Spiller s = spillere[i];
-//				Brikke b = s.getBrikke();
-//				Terning t = s.getTerning();
-//				
-//				s.spillTrekk();
-//				
-//				if(b.getPos() == 99) {
-//					System.out.println("Spiller: " + s.getNavn());
-//					System.out.println("Kastet: " + t.getVerdi());
-//					System.out.println("Pos: " + b.getPos());
-//					System.out.println("Vinneren er: " + s.getNavn());
-//					vinner = s;
-//				} else {
-//					System.out.println("Spiller: " + s.getNavn());
-//					System.out.println("Kastet: " + t.getVerdi());
-//					System.out.println("Pos: " + b.getPos());
-//				}
-//				
-//				if(s.getNyttKast()) {
-//					i--;
-//				}
-//			}
-//		}
-//	}
-
 }

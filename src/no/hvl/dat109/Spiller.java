@@ -13,6 +13,7 @@ public class Spiller {
 	private int sekserePaaRad;
 	private boolean trengerSekser;
 	private boolean nyttKast;
+	private Brett brett;
 
 	public Spiller(String navn, Brikke brikke) {
 		this.navn = navn;
@@ -77,7 +78,7 @@ public class Spiller {
 	public void spillTrekk() {
 		setNyttKast(false);
 		t1.trill();
-		int nyPos = brikke.getPos() + t1.getVerdi();
+		int nyPos = brikke.getRute().getRuteNr() + t1.getVerdi();
 		
 		/**
 		 * Sjekker om spilleren trenger en sekser for å gå videre.
@@ -102,7 +103,7 @@ public class Spiller {
 			 */
 			if(getSekserePaaRad() == 3) {
 				//Flytt til første rute + neste kast må være en sekser
-				brikke.setPos(0);
+				brikke.setRute(new Rute(0));
 				setSekserePaaRad(0);
 				setTrengerSekser(true);
 				return;
@@ -120,7 +121,7 @@ public class Spiller {
 		}
 		setSekserePaaRad(0);
 		
-		if(nyPos > 99) {
+		if(nyPos > 100) {
 			return;
 		}
 		

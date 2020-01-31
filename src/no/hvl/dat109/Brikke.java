@@ -19,23 +19,14 @@ public class Brikke {
 		this.brett = brett;
 		
 	}
-
 	
-	
-
 	public Rute getRute() {
 		return rute;
 	}
 
-
-
-
 	public void setRute(Rute rute) {
 		this.rute = rute;
 	}
-
-
-
 
 	public String getFarge() {
 		return farge;
@@ -55,7 +46,4 @@ public class Brikke {
         setRute(nyRute);		
 	}
 	
-	
-	
-
 }
