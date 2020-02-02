@@ -3,6 +3,12 @@ package no.hvl.dat109.objekter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Klasse for ett spillbrett i stigespillet.
+ * 
+ * @author Marius, Charlie, Glenn
+ *
+ */
 public class Brett {
 	final int STANDARD_RUTER = 100;
 	private Map<Integer, Rute> brett;
@@ -18,6 +24,9 @@ public class Brett {
 		return this.brett;
 	}
 
+	/**
+	 * Metode for å legge til stiger og slanger i spillet.
+	 */
 	public void leggTilRutetype() {
 
 		// Legger til stiger
@@ -44,6 +53,13 @@ public class Brett {
 		brett.put(98, new Rute(98, 78));
 	}
 
+	/**
+	 * Metode for å retunere ruten på den nye posisjonen.
+	 * 
+	 * @param rute
+	 * @param verdi
+	 * @return
+	 */
 	public Rute nyRutePos(Rute rute, int verdi) {
 		int pos = rute.getRuteNr();
 		int nyPos = pos + verdi;

@@ -10,9 +10,10 @@ import static java.lang.Thread.sleep;
 
 /**
  * 
+ * Klasse som definerer ett stigespill.
+ * 
  * @author Charlie, Marius og Glenn
  * 
- *	En simulering av et stigespill
  */
 public class Stigespill {
 	
@@ -34,6 +35,11 @@ public class Stigespill {
 		vunnet = false;
 	}
 	
+	/**
+	 * Metode for å initialisere spillere.
+	 * 
+	 * @param spillere
+	 */
 	public void initSpillere(ArrayList<Spiller> spillere) {
 		this.spillere = spillere;
 	}
@@ -42,6 +48,9 @@ public class Stigespill {
 		return brett;
 	}
 	
+	/**
+	 * Metode som starter stigespillet.
+	 */
 	 public void startSpill() {
         int runder = 1;
         System.out.println("Starter spillet...");
@@ -65,6 +74,9 @@ public class Stigespill {
         System.exit(1);
   	}
 	 
+	/**
+	 * Metode som spiller en runde for samtlige spillere.
+	 */
 	public void spillRunde() {
 		for (Spiller spiller : spillere) {
             spiller.spillTrekk(t1);
@@ -74,6 +86,11 @@ public class Stigespill {
         }
 	}
 	
+	/**
+	 * Metode som finner vinneren
+	 * 
+	 * @return
+	 */
 	public String finnVinner() {
 		return spillere.stream()
                 .filter(s -> s.getBrikke().getRute().getRuteNr() == 100)

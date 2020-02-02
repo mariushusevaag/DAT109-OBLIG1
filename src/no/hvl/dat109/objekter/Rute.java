@@ -2,7 +2,9 @@ package no.hvl.dat109.objekter;
 
 /**
  * 
- * @author Glenn Barosen, Marius Husevåg, Charlie Coulter
+ * Klasse for en Rute.
+ * 
+ * @author Glenn, Marius, Charlie
  *
  */
 public class Rute {
@@ -29,6 +31,7 @@ public class Rute {
 	}
 	
 	/**
+	 * Metode som sjekker om ruten har en stige.
 	 * 
 	 * @return Returnerer true om ruten er begynnelsen på en stige
 	 */
@@ -37,6 +40,7 @@ public class Rute {
 	}
 	
 	/**
+	 * Metode som sjekker om ruten har en slange.
 	 * 
 	 * @return Returnerer true om ruten er et slangehode
 	 */

@@ -11,6 +11,12 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Klasse for å teste applikasjonen.
+ * 
+ * @author Marius, Charlie, Glenn
+ *
+ */
 public class Tester {
     private Brett brett;
     private Map<Integer, Rute> ruteKart;

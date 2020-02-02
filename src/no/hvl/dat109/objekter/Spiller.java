@@ -1,7 +1,7 @@
 package no.hvl.dat109.objekter;
 
 /**
- * Definerer en spiller.
+ * Klasse som definerer en spiller.
  * 
  * @author Marius Husevåg, Glenn Arnold Barosen, Charlie Coulter
  *
@@ -28,7 +28,12 @@ public class Spiller {
 	public String getNavn() {
 		return navn;
 	}
-
+	
+	/**
+	 * Metode som spiller ett trekk for spilleren.
+	 * 
+	 * @param terning
+	 */
 	public void spillTrekk(Terning terning) {
 		int seksere = 0;
 		int sum;

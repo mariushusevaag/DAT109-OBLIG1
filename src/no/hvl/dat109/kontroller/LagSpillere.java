@@ -7,6 +7,12 @@ import no.hvl.dat109.objekter.Brikke;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Kontroller klasse for å oprette spillere
+ * 
+ * @author Marius, Charlie, Glenn
+ */
+
 public class LagSpillere {
 	private ArrayList<Spiller> spillere;
     private Stigespill spill;
@@ -16,6 +22,10 @@ public class LagSpillere {
         this.spill = spill;
     }
     
+    /**
+     * Metode for å oprette 2 eller flere spillere.
+     * De som starter programmet får velge hvor mange som skal spille, navn til spillerne og farge på brikke til spillerne
+     */
     public void spillerSetup() {
     	Scanner sc = new Scanner(System.in);
     	System.out.println("Hvor mange skal spille?");

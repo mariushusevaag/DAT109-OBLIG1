@@ -1,7 +1,7 @@
 package no.hvl.dat109.objekter;
 
 /**
- * Definerer en terning.
+ * Klasse som definerer en terning.
  * 
  * @author Marius Husevåg, Glenn Arnold Barosen, Charlie Coulter
  *

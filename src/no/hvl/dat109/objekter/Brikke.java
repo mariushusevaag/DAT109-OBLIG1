@@ -1,9 +1,9 @@
 package no.hvl.dat109.objekter;
 
 /**
- * Definerer en brikke
+ * Klasse for en brikke.
  * 
- * @author Charlie Coulter, Marius Husevåg, Glenn Arnold Barosen 
+ * @author Charlie, Marius, Glenn 
  *
  */
 
